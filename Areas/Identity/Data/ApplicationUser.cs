@@ -14,6 +14,7 @@ namespace MultipleDesk.Areas.Identity.Data;
 public class ApplicationUser : IdentityUser
 {
     [Required]
+    
     [Column(TypeName = "nvarchar(100)")]
     [Display(Name ="First Name")]
     public string FirstName { get; set; }
