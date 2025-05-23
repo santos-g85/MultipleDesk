@@ -1,0 +1,27 @@
+﻿body {
+    background-color: #f5f7fa;
+}
+
+.register-container {
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-title {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #e52e2e;
+    border: none;
+}
+
+    .btn-primary:hover {
+        background-color: #cc2626;
+    }
