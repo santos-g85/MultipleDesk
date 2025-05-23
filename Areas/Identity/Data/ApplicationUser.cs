@@ -13,13 +13,13 @@ namespace MultipleDesk.Areas.Identity.Data;
 // Add profile data for application users by adding properties to the ApplicationUser class
 public class ApplicationUser : IdentityUser
 {
-    [Required]
-    
+    [Required (ErrorMessage = "First name is required.")]
+
     [Column(TypeName = "nvarchar(100)")]
     [Display(Name ="First Name")]
     public string FirstName { get; set; }
 
-    [Required]
+    [Required(ErrorMessage = "Last name is required.")]
     [Column(TypeName = "nvarchar(100)")]
     [Display(Name = "Last Name")]
     public string LastName { get; set; }
@@ -27,6 +27,8 @@ public class ApplicationUser : IdentityUser
 
     [Required]
     [Display(Name ="Phone Number")]
+    [MinLength(10, ErrorMessage = "Phone number must be 10 digits long.")]
+
     public long PhoneNumber { get; set; }
 
 }

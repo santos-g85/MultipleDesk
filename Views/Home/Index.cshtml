@@ -4,9 +4,10 @@
 <link href="~/css/site.css" rel="stylesheet" />
 
 <div class="container-fluid">
+   
     <div class="row">
         <!-- Image Section -->
-        <div class="col-12 col-md-6 mb-4">
+        <div class="col-12 col-md-6 mb-4 logo-image">
             <img src="images/logohere.png" class="img-fluid" alt="Logo description here" />
         </div>
 
@@ -16,7 +17,8 @@
                 <div class="card-body d-flex flex-column justify-content-center align-items-center text-center ">
                     <h5 class="card-title text-danger fs-1">Access Anywhere</h5>
                     <p class="card-text fs-2 .text-danger-emphasis">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="Identity/Account/Register" class="btn btn-primary btn-lg">Download Now</a>
+                    <a href="Identity/Account/Register" class="btn btn-primary btn-lg">Download Now</a> 
+                    <a class="btn btn-primary btn-lg mt-5" asp-area="" asp-controller="File" asp-action="FileDownload">Download pdf</a> 
                 </div>
             </div>
         </div>
