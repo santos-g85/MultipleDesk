@@ -1,4 +1,12 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using MultipleDesk.Areas.Identity.Data;
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("MultipleDeskDbContextConnection") ?? throw new InvalidOperationException("Connection string 'MultipleDeskDbContextConnection' not found.");
+
+builder.Services.AddDbContext<MultipleDeskDbContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<MultipleDeskDbContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
