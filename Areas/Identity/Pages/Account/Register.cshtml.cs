@@ -71,25 +71,27 @@ namespace MultipleDesk.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
-            [Required]
+            [Required(ErrorMessage = "First name is required.")]
             [Display(Name ="First Name")]
+            
             public string FirstName { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Last name is required.")]
             [Display(Name = "Last Name")]
             public string LastName { get; set; }
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
+            [Required(ErrorMessage = "Email is required.")]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
 
 
-            [Required]
+            [Required(ErrorMessage = "Phone number is required.")]
             [Display(Name = "Phone Number")]
+            [MinLength(10, ErrorMessage = "Phone number must be 10 digits long.")]
             public string PhoneNumber { get; set; }
 
             /// <summary>
