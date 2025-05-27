@@ -1,14 +1,13 @@
 ﻿@model MultipleDesk.Models.UserRegistration
-
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="container py-5 mt-5">
+<div class="container py-7 mt-5">
     <div class="row  align-items-center gx-5">
         <!-- Text Content -->
         <div class="col-md-6">
-            <h1 class="fw-bold text-danger mb-4 display-5">
+            <h1 class="fw-bold text-danger mb-4 display-4">
                 Effortless Remote Access.<br class="d-none d-md-block" />
                 <span class="text-dark">Secure. Fast. Simple.</span>
             </h1>
@@ -18,13 +17,13 @@
             </p>
             <div class="d-flex flex-wrap gap-3 mb-4">
                 <button class="btn btn-danger px-5 py-3 fs-5" data-bs-toggle="modal" data-bs-target="#registerModal">Download</button>
-                <a href="#" class="btn btn-outline-danger px-5 py-3 fs-5">Learn More</a>
+                @* <a href="#" class="btn btn-outline-danger px-5 py-3 fs-5">Learn More</a> *@
             </div>
         </div>
 
         <!-- Image Section -->
         <div class="col-md-6 text-center pe-md-3 mt-4 mt-md-0 " >
-            <img src="~/images/logohere.png" class="img-fluid " style="max-height:400px; max-width:400px" alt="Remote Access Devices" />
+            <img src="~/images/logohere.png" class="img-fluid " style="max-height:500px; max-width:500px" alt="Remote Access Devices" />
         </div> 
     </div>
 </div>
@@ -32,7 +31,7 @@
 <!-- Disclaimer -->
 <div class="container mt-5">
     <div class="alert alert-warning text-center shadow-sm rounded" role="alert">
-        <strong>Disclaimer:</strong> This application is currently in the <em>Beta Testing</em> stage. Features may change.
+        <strong>Disclaimer:</strong> This application is currently in the <em>Beta version</em> stage. Features may change.
     </div>
 </div>
 
@@ -44,7 +43,7 @@
         <div class="modal-content">
             <form asp-controller="Register" asp-action="Register" method="post">
                 <div class="modal-header">
-                    <h5 class="modal-title">Register to Download</h5>
+                    <h5 class="modal-title text-danger">Register to Download</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -66,7 +65,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-success" type="submit">Register & Download</button>
+                    <button class="btn btn-danger" type="submit">Register & Download</button>
                 </div>
             </form>
         </div>
@@ -125,9 +124,9 @@
 
 <!-- Quick Connect Section -->
 
-@* <div class="container"> *@
-@*     <h2 class="text-center fw-bold  mb-4" style="font-size: 2.5rem; color:rgb(230,0,0)">All the features you need!</h2> *@
-@*     <p class="text-center mb-4" style="font-size: 1.1rem;"> *@
+@* <div class="container">  
+     <h2 class="text-center fw-bold  mb-4" style="font-size: 2.5rem; color:rgb(230,0,0)">All the features you need!</h2> *@
+@*    <p class="text-center mb-4" style="font-size: 1.1rem;"> *@
 @*         Share your device or connect instantly with a secure partner ID. *@
 @*     </p> *@
 
@@ -183,4 +182,4 @@
 
 
 @*     </div> *@
-@* </div> *@
+@*  </div> *@

@@ -1,5 +1,9 @@
+using MultipleDesk.Services;
 using MultipleDesktop.Services;
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<MongoDbSettings>(
+    builder.Configuration.GetSection("MongoDbSettings"));
 
 builder.Services.AddSingleton<MongoDbService>();
 
