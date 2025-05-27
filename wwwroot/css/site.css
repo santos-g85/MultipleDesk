@@ -19,18 +19,6 @@ html {
 
 body {
   margin-bottom: 60px;
+ 
 }
-.card-custom{
-    height:400px;
-}
-@media screen and (max-width: 768px) {
-    .logo-image {
-        display: none;
-    }
-    .container-fluid {
-        background: url('images/logohere.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-}
+

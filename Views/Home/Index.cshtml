@@ -1,26 +1,186 @@
-﻿@{
+﻿@model MultipleDesk.Models.UserRegistration
+
+@{
     ViewData["Title"] = "Home Page";
 }
-<link href="~/css/site.css" rel="stylesheet" />
 
-<div class="container-fluid">
-   
-    <div class="row">
-        <!-- Image Section -->
-        <div class="col-12 col-md-6 mb-4 logo-image">
-            <img src="images/logohere.png" class="img-fluid" alt="Logo description here" />
+<div class="container py-5 mt-5">
+    <div class="row  align-items-center gx-5">
+        <!-- Text Content -->
+        <div class="col-md-6">
+            <h1 class="fw-bold text-danger mb-4 display-5">
+                Effortless Remote Access.<br class="d-none d-md-block" />
+                <span class="text-dark">Secure. Fast. Simple.</span>
+            </h1>
+            <p class="mb-4 lead">
+                MultipleDesk lets you connect, control, and assist any device instantly.
+                No complex setup, no confusion—just seamless access anytime, anywhere.
+            </p>
+            <div class="d-flex flex-wrap gap-3 mb-4">
+                <button class="btn btn-danger px-5 py-3 fs-5" data-bs-toggle="modal" data-bs-target="#registerModal">Download</button>
+                <a href="#" class="btn btn-outline-danger px-5 py-3 fs-5">Learn More</a>
+            </div>
         </div>
 
-        <!-- Card Section -->
-        <div class="col-12 col-md-6 d-flex align-items-center">
-            <div class="card w-auto card-custom d-flex flex-column justify-content-center border-0">
-                <div class="card-body d-flex flex-column justify-content-center align-items-center text-center ">
-                    <h5 class="card-title text-danger fs-1">Access Anywhere</h5>
-                    <p class="card-text fs-2 .text-danger-emphasis">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="Identity/Account/Register" class="btn btn-primary btn-lg">Download Now</a> 
-                    <a class="btn btn-primary btn-lg mt-5" asp-area="" asp-controller="File" asp-action="FileDownload">Download pdf</a> 
+        <!-- Image Section -->
+        <div class="col-md-6 text-center pe-md-3 mt-4 mt-md-0 " >
+            <img src="~/images/logohere.png" class="img-fluid " style="max-height:400px; max-width:400px" alt="Remote Access Devices" />
+        </div> 
+    </div>
+</div>
+
+<!-- Disclaimer -->
+<div class="container mt-5">
+    <div class="alert alert-warning text-center shadow-sm rounded" role="alert">
+        <strong>Disclaimer:</strong> This application is currently in the <em>Beta Testing</em> stage. Features may change.
+    </div>
+</div>
+
+
+
+<!-- Registration Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-controller="Register" asp-action="Register" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title">Register to Download</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-            </div>
+                <div class="modal-body">
+                    <div class="mb-2">
+                        <label>First Name</label>
+                        <input asp-for="FirstName" class="form-control" required />
+                    </div>
+                    <div class="mb-2">
+                        <label>Last Name</label>
+                        <input asp-for="LastName" class="form-control" required />
+                    </div>
+                    <div class="mb-2">
+                        <label>Mobile Number</label>
+                        <input asp-for="MobileNumber" class="form-control" required />
+                    </div>
+                    <div class="mb-2">
+                        <label>Email</label>
+                        <input asp-for="Email" type="email" class="form-control" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" type="submit">Register & Download</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var shouldDownload = '@TempData["TriggerDownload"]' === 'True';
+            if (shouldDownload) {
+                window.location.href = '/Register/Download';
+            }
+        });
+    </script>
+}
+
+@* @{ *@
+@*     ViewData["Title"] = "Home Page"; *@
+@* } *@
+
+@* <div class="container py-5"> *@
+
+@*     <div class="row align-items-center gx-5"> *@
+@*         <!-- Text Content --> *@
+@*         <div class="col-md-6 ps-md-3"> *@
+@*             <h1 class="fw-bold text-danger mb-4" style="font-size: 3rem;"> *@
+@*                 Effortless Remote Access. <br class="d-none d-md-block" /> Secure. Fast. Simple. *@
+@*             </h1> *@
+@*             <p class="mb-5" style="font-size: 1.25rem;"> *@
+@*                 RemotEase lets you connect, control, and assist any device instantly. *@
+@*                 No complex setup, no confusion—just seamless access anytime, anywhere. *@
+@*             </p> *@
+@*             <div class="d-flex mb-4 flex-wrap"> *@
+@*                 <a href="#" class="btn btn-danger me-3 mb-2 px-5 py-3" style="font-size: 1.2rem;">Download</a> *@
+@*                 <a href="#" class="btn btn-outline-danger mb-2 px-5 py-3" style="font-size: 1.2rem;">Learn More</a> *@
+@*             </div> *@
+           
+@*         </div> *@
+
+@*         <!-- Image Section --> *@
+@*         <div class="col-md-6 text-center pe-md-3 mt-4 mt-md-0  rounded shadow-sm" style="max-height:400px; max-width:400px"> *@
+@*             <img src="~/images/logohere.png" class="img-fluid" alt="Remote Access Devices" /> *@
+
+
+@*         </div> *@
+@*     </div> *@
+@* </div> *@
+
+@* <div class="alert alert-warning text-center mb-5" role="alert"> *@
+@*     <strong>Disclaimer:</strong> MultipleDesk is a third-party service that provides remote access tools. Please ensure you have proper authorization to access any device. Unauthorized access is illegal and unethical. *@
+@* </div> *@
+
+
+@* <hr class="my-5" /> *@
+
+<!-- Quick Connect Section -->
+
+@* <div class="container"> *@
+@*     <h2 class="text-center fw-bold  mb-4" style="font-size: 2.5rem; color:rgb(230,0,0)">All the features you need!</h2> *@
+@*     <p class="text-center mb-4" style="font-size: 1.1rem;"> *@
+@*         Share your device or connect instantly with a secure partner ID. *@
+@*     </p> *@
+
+@*     <div class="d-flex flex-wrap justify-content-center gap-4">  *@
+@*     <!--swcure connect card--> *@
+@*         <div class="card shadow rounded" style="max-width:300px" > *@
+@*             <div class="card-body"> *@
+@*                 <h5 class="card-title text-danger mb-3"> *@
+@*                 <i class="bi bi-shield-lock me-2"></i> Remote Desktop Control *@
+      
+@*             </h5> *@
+
+
+@*                 <div class="bg-light p-4 rounded my-3 text-center"> *@
+@*                     <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#dc3545" class="bi bi-pc-display mb-3" viewBox="0 0 16 16"> *@
+@*                         <path d="M5.5 13a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1H9v-1h3a2 2 0 0 0 2-2V3a2 *@
+@*                     2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3v1H5.5zm-2-3V3a1 *@
+@*                     1 0 0 1 1-1h8a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H4.5a1 1 0 0 1-1-1z" /> *@
+@*                     </svg> *@
+@*                 </div> *@
+
+@*             <p> *@
+@*                 Instantly access and control any device  *@
+@*                 as if you were sitting in front of it,no hassle *@
+@*             </p> *@
+@*             </div> *@
+@*             </div> *@
+
+@*         <div class="card shadow rounded" style="max-width:300px"> *@
+@*             <div class="card-body"> *@
+@*                 <h5 class="card-title text-danger mb-3"> *@
+@*                     <i class="bi bi-shield-lock me-2"></i> File Sharing *@
+
+@*                 </h5> *@
+
+
+@*                 <div class="bg-light p-4 rounded my-3 text-center"> *@
+
+@*                     <svg xmlns="http://www.w3.org/2000/svg" height="64" width="64" fill="#dc3545" class="bi bi-pc-display mb-3" viewBox="0 0 384 512"> *@
+@*                         <path d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM216 408c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-102.1-31 31c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l72-72c9.4-9.4 24.6-9.4 33.9 0l72 72c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-31-31L216 408z" /> *@
+@*                     </svg> *@
+
+
+@*                 </div> *@
+
+@*                 <p> *@
+@*                     Instantly access and control any device *@
+@*                     as if you were sitting in front of it,no hassle *@
+@*                 </p> *@
+@*             </div> *@
+@*         </div> *@
+
+
+
+@*     </div> *@
+@* </div> *@
