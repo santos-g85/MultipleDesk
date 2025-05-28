@@ -6,7 +6,7 @@
 <div class="container py-7 mt-5">
     <div class="row  align-items-center gx-5">
         <!-- Text Content -->
-        <div class="col-md-6">
+        <div class="col-md-6 order-2 order-md-1">
             <h1 class="fw-bold text-danger mb-4 display-4">
                 Effortless Remote Access.<br class="d-none d-md-block" />
                 <span class="text-dark">Secure. Fast. Simple.</span>
@@ -15,7 +15,7 @@
                 MultipleDesk lets you connect, control, and assist any device instantly.
                 No complex setup, no confusion—just seamless access anytime, anywhere.
             </p>
-            <div class="mb-3 fst- fw-semibold text-muted">v1.0.0</div> <!-- Version text -->
+            <div class="mb-3  fw-semibold text-muted">v1.0.0</div> <!-- Version text -->
             <div class="d-flex flex-wrap gap-3 mb-4">
                 <button class="btn btn-danger px-5 py-3 fs-5" data-bs-toggle="modal" data-bs-target="#registerModal">Download</button>
                 @* <a href="#" class="btn btn-outline-danger px-5 py-3 fs-5">Learn More</a> *@
@@ -23,8 +23,8 @@
         </div>
 
         <!-- Image Section -->
-        <div class="col-md-6 text-center pe-md-3 mt-4 mt-md-0 " >
-            <img src="~/images/logohere.png" class="img-fluid " style="max-height:500px; max-width:500px" alt="Remote Access Devices" />
+        <div class="col-md-6 text-center pe-md-3 mt-4 mt-md-0 order-1 order-md-2">
+            <img src="~/images/logohere.png" class="img-fluid " style="max-width: 100%; height: auto; max-height: 400px;" alt="Remote Access Devices" />
         </div> 
     </div>
 </div>
@@ -90,9 +90,6 @@
     </script>
 }
 
-@* @{ *@
-@*     ViewData["Title"] = "Home Page"; *@
-@* } *@
 
 @* <div class="container py-5"> *@
 
