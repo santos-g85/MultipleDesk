@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System.ComponentModel.DataAnnotations;
- 
+
 namespace MultipleDesk.Models
 {
     public class UserRegistration
@@ -23,8 +23,7 @@ namespace MultipleDesk.Models
         [BsonElement("MobileNumber")]
         [Required(ErrorMessage = "Mobile number is required")]
         [Phone(ErrorMessage = "Invalid phone number")]
-        [MaxLength(10, ErrorMessage = "Mobile number cannot be longer than 10 characters")]
-        [MinLength(10, ErrorMessage = "Mobile number cannot be less than 10 characters")]
+        [RegularExpression(@"^\d{10}$", ErrorMessage = "Mobile number must be 10 digits")]
         public string MobileNumber { get; set; } = string.Empty;
 
         [BsonElement("Email")]

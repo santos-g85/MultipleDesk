@@ -29,9 +29,9 @@
 </div>
 
 <!-- Disclaimer -->
-<div class="container mt-5">
+<div class="container mt-3 mb-5">
     <div class="alert alert-warning text-center shadow-sm rounded" role="alert">
-        <strong>Disclaimer:</strong> This application is currently in the <em>Beta version</em> stage. Features may change.
+        <strong>Disclaimer:</strong> This application is currently in the <em><b class="fw-bold">Beta version</b></em>. Features may change.
     </div>
 </div>
 
@@ -50,18 +50,22 @@
                     <div class="mb-2">
                         <label>First Name</label>
                         <input asp-for="FirstName" class="form-control" required />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
                     </div>
                     <div class="mb-2">
                         <label>Last Name</label>
                         <input asp-for="LastName" class="form-control" required />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
                     </div>
                     <div class="mb-2">
                         <label>Mobile Number</label>
                         <input asp-for="MobileNumber" class="form-control" required />
+                        <span asp-validation-for="MobileNumber" class="text-danger"></span>
                     </div>
                     <div class="mb-2">
                         <label>Email</label>
                         <input asp-for="Email" type="email" class="form-control" required />
+                        <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -73,6 +77,8 @@
 </div>
 
 @section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var shouldDownload = '@TempData["TriggerDownload"]' === 'True';
