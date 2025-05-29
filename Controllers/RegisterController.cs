@@ -44,7 +44,7 @@ namespace MultipleDesk.Controllers
         }
         public IActionResult Download()
         {
-            var filePath = Path.Combine(_env.WebRootPath, "Downloads", "Internship_Report_Improved-w.docx");
+            var filePath = Path.Combine(_env.WebRootPath, "Downloads", "MultipleDeskInstaller.exe");
 
             if (!System.IO.File.Exists(filePath))
             {
@@ -52,7 +52,7 @@ namespace MultipleDesk.Controllers
                 return NotFound("Download file not available.");
             }
 
-            return PhysicalFile(filePath, "application/octet-stream", "Internship_Report_Improved-w.docx");
+            return PhysicalFile(filePath, "application/octet-stream", "MultipleDeskInstaller.exe");
         }
     }
 }
